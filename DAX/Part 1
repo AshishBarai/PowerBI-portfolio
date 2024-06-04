@@ -70,6 +70,14 @@ Total quantity using filter = CALCULATE([total quantiy], FILTER(customers, Custo
 
 4. Using the VALUES function
 
+About VALUES:
+When the input parameter is a column name, returns a one-column table 
+that contains the distinct values from the specified column. Duplicate
+values are removed and only unique values are returned. A BLANK value 
+can be added. When the input parameter is a table name, returns the rows 
+from the specified table. Duplicate rows are preserved. A BLANK row can be 
+added.
+
 Syntax:
 VALUES(<TableNameOrColumnName>)
 
