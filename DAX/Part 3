@@ -1,0 +1,66 @@
+7. Using COUNTROWS() function:
+
+The COUNTROWS function counts the number of rows in the specified table,
+or in a table defined by an expression.
+
+Syntax:
+COUNTROWS([<table>])
+
+COUNTROWS_measures = COUNTROWS(Sales)
+
+Explanation:
+> COUNTROWS function: This function counts the number of rows in the specified 
+ table.
+> sales: This specifies the table from which the rows will be counted.
+
+Effectiveness:
+> The COUNTROWS function is straightforward and efficient for counting the 
+number of rows in a table.
+> It is particularly useful when you want to know the total number of transactions, 
+records, or any other row-level data in a table.
+
+
+8. Using COUNT() Functions:
+
+Counts the number of rows in the specified column that contain non-blank values.
+
+Syntax:
+COUNT([column])
+
+COUNT_Measure = COUNT(Sales[Trasaction_table])
+
+Explantion:
+> COUNT function: This function counts the number of non-blank values in a specified 
+column.
+> Sales[Transaction_table]: This specifies the column within the Sales table where the 
+non-blank values will be counted.
+
+Effectiveness:
+> The COUNT function is useful when you want to count the number of entries in a 
+column, excluding any blank or null values.
+> It is particularly effective for counting occurrences of specific data points, such 
+as the number of transactions recorded in the Transaction_table column.
+
+
+9. Using COUNTX() function:
+The COUNTAX function counts non-blank results when evaluating the result of an expression 
+over a table. That is, it works just like the COUNTA function, but is used to iterate through 
+the rows in a table and count rows where the specified expressions results in a non-blank result.
+
+Syntax:
+COOUNTX([<table>],[<Exprestion>])
+
+COUNTX_measure = COUNTX(Sales,[Total Quantity])
+
+Explanation:
+> COUNTX function: This is an iterator function that evaluates an expression for each 
+row of a table and counts the number of non-blank results.
+> Sales: This specifies the table over which the expression is evaluated.
+> [Total Quantity]: This refers to a previously defined measure or column in the Sales 
+table that contains the quantity to be counted.
+
+Effectiveness:
+> The COUNTX function is useful for counting non-blank results of an expression evaluated 
+for each row in a table.
+> It provides more flexibility than the COUNT function as it allows for complex expressions 
+to be evaluated row-by-row.
