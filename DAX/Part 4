@@ -43,3 +43,22 @@ Explanation:
 Effectiveness:
 > The SUMMARIZE function is powerful for creating aggregated views of your data.
 > It allows you to group data by one or more columns and calculate aggregated measures for each group.
+
+12. How to create 1 row table using DAX - ROW() function.
+
+Returns a table with a single row containing values that result from the expressions given to each column.
+
+Syntax:
+ROW(<name>, <expression>[[,<name>, <expression>]…])
+
+OneRowTable_measure = ROW("Total Quantity", [total order quantity])
+
+Explanation:
+> ROW function: Creates a single-row table with named columns.
+> "Total Quantity": The name of the column in the single-row table.
+> [total order quantity]: The measure or value assigned to the "Total Quantity" column.
+
+Effectivness:
+> The ROW function is useful for creating a single-row table, which can be handy for displaying 
+ summary information or for use in other calculations or DAX expressions.
+> It provides a structured way to create a table with specific columns and values.
