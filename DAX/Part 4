@@ -1,4 +1,4 @@
-10. Using SELECTEDVALUE()
+10. Using SELECTEDVALUE() Function
 
 Returns the value when the context for columnName has been filtered 
 down to one distinct value only. Otherwise returns alternateResult.
@@ -21,3 +21,25 @@ Effectiveness:
  the report, making it highly effective for interactive reports.
 > Defaulting to "Arcadia" ensures that the measure still produces a result even if no 
  specific city is selected, providing robustness to the measure.
+
+
+11. Using SUMMARIZE() Function
+
+Returns a summary table for the requested totals over a set of groups.
+
+Syntax:
+SUMMARIZE (<table>, <groupBy_columnName>[, <groupBy_columnName>]…[, <name>, <expression>]…)
+
+pSUMMARIZE = SUMMARIZE('f-sales','f-sales'[ProductKey]," Total QTY", [total order quantity])
+
+
+Explanation:
+> SUMMARIZE function: Creates a summary table by grouping data based on specified columns and including aggregated data.
+> 'f-sales': The table to summarize.
+> 'f-sales'[ProductKey]: The column by which to group the data.
+> "Total QTY": The name of the new column that will contain the summarized data.
+> [total order quantity]: The measure to be calculated for each group.
+
+Effectiveness:
+> The SUMMARIZE function is powerful for creating aggregated views of your data.
+> It allows you to group data by one or more columns and calculate aggregated measures for each group.
