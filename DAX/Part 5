@@ -1,0 +1,21 @@
+13. using RELATED() function:
+
+Returns the related values from ANOTHER table.
+aslo the relation between the dimension to fact table should be ONE to MANY
+
+Syntax:
+RELATED(<column>)
+
+product_cost = RELATED('d-Products'[ProductCost])
+
+Explanation:
+> RELATED function: This function retrieves a related value from another 
+ table based on an existing relationship in the data model.
+> 'd-Products': The table from which the related value is retrieved.
+> [ProductCost]: The column in the 'd-Products' table whose values are retrieved.
+
+Effectiveness:
+> The RELATED function is effective for bringing in values from related tables without 
+ needing to create complex joins or additional tables.
+> It allows you to leverage relationships in the data model to enhance your calculations 
+ and enrich your dataset with related data.
