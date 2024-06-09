@@ -1,7 +1,7 @@
 13. using RELATED() function:
 
 Returns the related values from ANOTHER table.
-aslo the relation between the dimension to fact table should be ONE to MANY
+also the relation between the dimension to fact table should be ONE to MANY
 
 Syntax:
 RELATED(<column>)
@@ -19,3 +19,28 @@ Effectiveness:
  needing to create complex joins or additional tables.
 > It allows you to leverage relationships in the data model to enhance your calculations 
  and enrich your dataset with related data.
+
+14. Using REALTEDTABLE:
+
+Evaluates a table expression in a context modified by the given filters.
+Also relationship between them fact to dimension should be many to one realtionship 
+
+Syntax:
+RELATEDTABLE(<tableName>)
+
+Order qty = SUMX(RELATEDTABLE('f-sales'),[total order quantity])
+
+Explanation:
+> SUMX function: This is an iterator function that iterates over a table, evaluating an 
+ expression for each row and then summing the results.
+> RELATEDTABLE function: This function retrieves a related table based on the existing 
+ relationships in the data model. In this context, it returns all rows from the 'f-sales' 
+ table that are related to the current row context.
+> [total order quantity]: This refers to a previously defined measure or column that calculates
+ the total order quantity.
+
+Effectiveness:
+> The SUMX function combined with RELATEDTABLE is powerful for performing row-by-row 
+ calculations on related tables and aggregating the results.
+> It leverages relationships in your data model to dynamically fetch related rows and 
+ perform calculations on them.
