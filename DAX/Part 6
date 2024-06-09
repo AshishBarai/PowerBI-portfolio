@@ -1,0 +1,64 @@
+ To create a Calender Table
+
+Used the function: CALENDER(), GENERATE(), ROW() funtion to create a dynamic calender 
+table.
+
+Here is the DAX for that:
+
+Calendar_table = 
+VAR a = CALENDAR(DATE(2015,01,01), DATE(YEAR(TODAY()),MONTH(TODAY()), DAY(TODAY())))
+RETURN
+GENERATE(
+    a,
+    VAR b = [Date]
+    VAR c = YEAR([Date])
+    VAR d = MONTH([Date])
+    VAR e = DAY([Date])
+    RETURN
+    ROW("Year", c, "Month", d, "Day", e)
+)
+
+Explanation:
+
+This DAX code creates a calendar table (pCalendar_table) which includes additional 
+columns for year, month, and day, extracted from the date.
+
+Step-by-Step Breakdown
+1 > Define the Date Range:
+
+VAR a = CALENDAR(DATE(2015,01,01), DATE(YEAR(TODAY()),MONTH(TODAY()), DAY(TODAY())))
+
+> CALENDAR Function: Creates a single-column table with a continuous range of dates.
+> DATE(2015,01,01): Specifies the start date as January 1, 2015.
+> DATE(YEAR(TODAY()),MONTH(TODAY()), DAY(TODAY())): Specifies the end date as today's 
+date.
+> TODAY(): Returns the current date.
+> YEAR(TODAY()), MONTH(TODAY()), DAY(TODAY()): Extracts the year, month, and day from 
+today's date to form the end date.
+
+2 > To generate Additional Columns:
+
+RETURN
+GENERATE(
+    a,
+    VAR b = [Date]
+    VAR c = YEAR([Date])
+    VAR d = MONTH([Date])
+    VAR e = DAY([Date])
+    RETURN
+    ROW("Year", c, "Month", d, "Day", e)
+)
+
+>GENERATE Function: Iterates over each row in table a and creates a new table by adding 
+columns to each row.
+> Variables b, c, d, and e:
+> b = [Date]: Stores the current date from the table a.
+> c = YEAR([Date]): Extracts the year from the current date.
+> d = MONTH([Date]): Extracts the month from the current date.
+> e = DAY([Date]): Extracts the day from the current date.
+> ROW Function: Creates a single-row table with columns "Year", "Month", and "Day" 
+containing the values of c, d, and e, respectively.
+
+3 > Combining Everything:
+> The GENERATE function combines the original date with the additional columns "Year", 
+ "Month", and "Day" for each date in the range specified.
