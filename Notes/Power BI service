@@ -1,0 +1,6 @@
+In the Power BI service, you can also create a dashboards after you have published a report.
+Dashboards consist of a single page made up oof tiles.
+
+Add tiles to a dashboard by pinning a visual in a report to the dashboard. Tiles aren't 
+interactive like visuals, so when a suer interacts with the tile, they go to the underlying
+ report for more information
