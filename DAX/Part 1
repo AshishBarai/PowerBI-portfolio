@@ -14,12 +14,6 @@ Explanation:
 > sale[quantity]: this specifies the columns in the 'sales' tabke from which 
   the values will be summed
 
- ffectiveness:
-> This measure is straightforwar and efficient for calculating the total 
-  quantity of sales without any filtering or complex conditions.
-> It is most effective when we want a simple aggregation of all values 
-  in a column.
-
 2. Using the CALCULATE function
 
 Syntax:
@@ -37,13 +31,6 @@ Explanation:
  only include rows where the occupation in the Customers table is 
  "Professional".
 
- Effectiveness:
- > CALCULATE is very powerful and versatile. It can change the 
-  context of your calculations, making it effective for conditional 
-  aggregations.
-> It is useful when you need to apply specific filters dynamically, 
- such as filtering by customer occupation.
-
  3. Using FILTER Function
 
 Syntax:
@@ -60,13 +47,6 @@ Total quantity using filter = CALCULATE([total quantiy], FILTER(customers, Custo
  >  CALCULATE([Total quantity], ...): Here, the CALCULATE function 
   changes the context of [Total quantity] to only include rows from 
   the filtered table.
-
- Effectiveness:
- > Using FILTER within CALCULATE is effective for more complex 
-  filtering conditions that cannot be directly applied in the 
-  CALCULATE function.
-> This approach is useful when you need to apply filters involving 
-  multiple columns or more complex logical conditions.
 
 4. Using the VALUES function
 
@@ -92,10 +72,3 @@ Explanation:
  to only include "Professional".
 > CALCULATE([Total quantity], ...): This uses the filtered context 
  to calculate [Total quantity].
-
-
-Effectiveness
-> The use of VALUES is effective for scenarios where you need to 
- work with distinct values of a column.
-> It is particularly useful when dealing with relationships and 
- needing distinct values in a filter context.
