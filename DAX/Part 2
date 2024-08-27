@@ -16,12 +16,6 @@ Explanation:
 > ALL(Customers): This removes any filters that have been applied to the 
  Customers table.
 
-Effectiveness:
-> The ALL function is used to remove any filters from the specified table or 
- column. In this case, ALL(Customers) removes all filters from the Customers table.
-> This measure calculates the total quantity of sales without considering any filters 
- that might be applied to the Customers table.
-
 5. Using ALLSELECTED() Function
 
 Removes context filters from columns and rows in the current query, while retaining all 
@@ -39,14 +33,6 @@ Syntax:
 ALLSELECTED([<tableName> | <columnName>[, <columnName>[, <columnName>[,…]]]] )
 
 ALLSELECTED_measures = CALCULATE([Total quantity], ALLSELECTED(Customers))
-
-Explanation:
-> CALCULATE function: Changes the context in which the data is evaluated.
-> [Total quantity]: This refers to a previously defined measure, such as 
- SUM(sales[quantity]).
-> ALLSELECTED(Customers): This function removes filters applied by rows and 
- columns of the Customers table except for those explicitly applied by the user 
- through the report interface.
 
 Effectiveness:
 > The ALLSELECTED function is effective for scenarios where you want to retain 
@@ -72,11 +58,3 @@ Explanation:
  SUM(sales[quantity]).
 > ALLEXCEPT(Customers, Customers[customer_city]): This function removes all filters from
  the Customers table except those applied to the Customers[customer_city] column.
-
-Effectiveness:
-> The ALLEXCEPT function is useful when you want to ignore all filters except for 
- specific columns. In this case, it ignores all filters on the Customers table except 
- for the customer_city column.
-> This allows for more granular control over which filters are retained in the calculation
- context.
-
