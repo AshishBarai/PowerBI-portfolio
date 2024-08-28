@@ -34,12 +34,13 @@ ALLSELECTED([<tableName> | <columnName>[, <columnName>[, <columnName>[,…]]]] )
 
 ALLSELECTED_measures = CALCULATE([Total quantity], ALLSELECTED(Customers))
 
-Effectiveness:
-> The ALLSELECTED function is effective for scenarios where you want to retain 
- user-applied filters but remove intermediate filters.
-> This is particularly useful for dynamic reports where the user's selections 
- should be honored, but the calculation should not be affected by other filters 
- within the same visual or context.
+Explanation:
+> CALCULATE function: Changes the context in which the data is evaluated.
+> [Total quantity]: This refers to a previously defined measure, such as 
+ SUM(sales[quantity]).
+> ALLSELECTED(Customers): This function removes filters applied by rows and 
+ columns of the Customers table except for those explicitly applied by the user 
+ through the report interface.
 
 
 6. Using ALLEXCEPT() Function:
