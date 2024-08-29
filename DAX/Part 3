@@ -13,12 +13,6 @@ Explanation:
  table.
 > sales: This specifies the table from which the rows will be counted.
 
-Effectiveness:
-> The COUNTROWS function is straightforward and efficient for counting the 
-number of rows in a table.
-> It is particularly useful when you want to know the total number of transactions, 
-records, or any other row-level data in a table.
-
 
 8. Using COUNT() Functions:
 
@@ -34,13 +28,6 @@ Explantion:
 column.
 > Sales[Transaction_table]: This specifies the column within the Sales table where the 
 non-blank values will be counted.
-
-Effectiveness:
-> The COUNT function is useful when you want to count the number of entries in a 
-column, excluding any blank or null values.
-> It is particularly effective for counting occurrences of specific data points, such 
-as the number of transactions recorded in the Transaction_table column.
-
 
 9. Using COUNTX() function:
 The COUNTAX function counts non-blank results when evaluating the result of an expression 
@@ -58,8 +45,6 @@ row of a table and counts the number of non-blank results.
 > Sales: This specifies the table over which the expression is evaluated.
 > [Total Quantity]: This refers to a previously defined measure or column in the Sales 
 table that contains the quantity to be counted.
-
-Effectiveness:
 > The COUNTX function is useful for counting non-blank results of an expression evaluated 
 for each row in a table.
 > It provides more flexibility than the COUNT function as it allows for complex expressions 
