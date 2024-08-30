@@ -16,13 +16,6 @@ Explanation:
  applies a filter where the customer_city is equal to the selected value from the 
  Customers[customer_city] column. If no value is selected, it defaults to "Arcadia".
 
-Effectiveness:
-> The SELECTEDVALUE function allows for dynamic filtering based on user interaction with 
- the report, making it highly effective for interactive reports.
-> Defaulting to "Arcadia" ensures that the measure still produces a result even if no 
- specific city is selected, providing robustness to the measure.
-
-
 11. Using SUMMARIZE() Function
 
 Returns a summary table for the requested totals over a set of groups.
@@ -39,10 +32,6 @@ Explanation:
 > 'f-sales'[ProductKey]: The column by which to group the data.
 > "Total QTY": The name of the new column that will contain the summarized data.
 > [total order quantity]: The measure to be calculated for each group.
-
-Effectiveness:
-> The SUMMARIZE function is powerful for creating aggregated views of your data.
-> It allows you to group data by one or more columns and calculate aggregated measures for each group.
 
 12. How to create 1 row table using DAX - ROW() function.
 
