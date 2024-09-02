@@ -20,10 +20,10 @@ GENERATE(
 
 Explanation:
 
-This DAX code creates a calendar table (pCalendar_table) which includes additional 
+This DAX code creates a calendar table (Calendar_table) which includes additional 
 columns for year, month, and day, extracted from the date.
 
-Step-by-Step Breakdown
+Here Is The Step-by-Step Breakdown
 1 > Define the Date Range:
 
 VAR a = CALENDAR(DATE(2015,01,01), DATE(YEAR(TODAY()),MONTH(TODAY()), DAY(TODAY())))
