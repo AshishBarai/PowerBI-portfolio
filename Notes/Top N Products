@@ -1,0 +1,19 @@
+Q: How to find top N products ?
+
+Top 5 product by profit = CALCULATE([Profit], FILTER(VALUES('d-Products'[ProductColor]),RANKX('d-Products',[Profit],,DESC,Dense) <= 5))
+
+1. CALCULATE([Profit], …):
+> The CALCULATE function modifies the context in which the data is evaluated. Here, it calculates the [Profit] measure within a specific context defined by the FILTER function.
+
+2. FILTER(VALUES(‘d-Products’[ProductColor]), …):
+> The FILTER function returns a table that contains only the rows that meet the specified condition.
+
+3. VALUES('d-Products'[ProductColor]) returns a table of unique product colors from the ‘d-Products’ table.
+> RANKX(‘d-Products’, [Profit], , DESC, Dense) <= 5:
+
+4. RANKX ranks each product based on the [Profit] measure.
+> 'd-Products' is the table being ranked.
+> [Profit] is the expression used for ranking.
+> DESC specifies that the ranking should be in descending order (highest profit first).
+> Dense specifies that the ranking should be dense, meaning no gaps in ranking numbers.
+> <= 5 filters the products to include only those with a rank of 5 or less.
