@@ -1,0 +1,13 @@
+Q : How to calculate last 7 days of sales?
+
+Last 7 days sales = CALCULATE([Revenue],DATESINPERIOD('d-Calendar'[Date],MAX('d-Calendar'[Date]),-7,DAY))
+
+1. CALCULATE([Revenue], …):
+> The CALCULATE function modifies the context in which the data is evaluated. Here, it calculates the [Revenue] measure within a specific context defined by the DATESINPERIOD function.
+
+2. DATESINPERIOD(‘d-Calendar’[Date], MAX(‘d-Calendar’[Date]), -7, DAY):
+> The DATESINPERIOD function returns a table that contains a column of dates shifted by a specified interval.
+> 'd-Calendar'[Date] is the column containing the dates.
+> MAX('d-Calendar'[Date]) finds the latest date in the ‘d-Calendar’ table.
+> -7 specifies the interval to go back 7 days from the latest date.
+> DAY specifies the granularity of the interval (in this case, days).
