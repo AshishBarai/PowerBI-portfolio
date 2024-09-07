@@ -1,0 +1,12 @@
+Q : How to calculate total sales or revenue with inactive relationship?
+
+About inactive relationship:
+In Power BI and other data modeling tools, you can have multiple relationships between tables, but only one can be active at a time. The others are considered inactive.
+
+Active Relationship: The default relationship used for calculations and filtering.
+Inactive Relationship: A relationship that exists but is not used by default. It can be activated temporarily using the USERELATIONSHIP function.
+
+Revenue with inactive relationship = CALCULATE([Revenue],USERELATIONSHIP('d-Calendar'[Date],'f-sales'[StockDate]))
+
+1. CALCULATE: This function evaluates an expression in a modified filter context. In this case, the expression is [Revenue].
+2. USERELATIONSHIP: This function is used to specify which relationship to use in a calculation. It temporarily activates an inactive relationship between two columns for the duration of the calculation.
