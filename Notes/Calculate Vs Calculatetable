@@ -1,0 +1,18 @@
+What is the difference between Calculate and Calculatetable ?
+
+Both CALCULATE and CALCULATETABLE are powerful DAX functions in Power BI, but they serve different purposes:
+
+1. CALCULATE:
+> Purpose: Modifies the filter context of an expression and returns a single scalar value.
+> Example: Profit by Bikes = CALCULATE([Profit], 'd-Categories'[CategoryName] = "Bikes")
+> Usage: Typically used to create measures that return a single value based on the modified filter context.
+
+2. CALCULATETABLE:
+> Purpose: Modifies the filter context of a table expression and returns a table.
+> Example: Profit by CalculateTable = SUMX(CALCULATETABLE('d-Categories', 'd-Categories'[CategoryName] = "Bikes"), [Profit])
+> Usage: Used when you need to return a table that can be further processed, such as in a SUMX function to iterate over the rows of the table.
+
+In our examples:
+
+The CALCULATE function is used to calculate the total profit for the “Bikes” category by modifying the filter context to include only rows where CategoryName is “Bikes”.
+The CALCULATETABLE function is used to create a table that includes only rows where CategoryName is “Bikes”, and then SUMX iterates over this table to sum the Profit values.
