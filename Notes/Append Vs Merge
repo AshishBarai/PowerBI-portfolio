@@ -1,0 +1,10 @@
+What is the difference between Append and Merge?
+
+Depending on the kind of concatenation you need to perform for your needs, you can choose between merge and append queries.
+
+Merge queries are mostly used when you have two tables that have one column in common. Thus, it can help us create a new table or make changes to an existing table based on the common column.
+
+On the other hand, append queries will help you join two or more queries by stacking them on top of each other. Therefore, it adds more rows to an existing query or creates a new query by appending multiple queries.
+
+Detail link about Append and Merge:
+https://www.geeksforgeeks.org/merge-and-append-queries-in-power-bi/
