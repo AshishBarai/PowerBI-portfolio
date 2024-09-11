@@ -1,0 +1,17 @@
+Q: What is the difference between Measures and calculated columns?
+
+Measures:
+> Do not consume physical storage space.
+> Calculated dynamically (on the fly) during queries or visualizations.
+> Cannot create or participate in relationships.
+> Context-sensitive: Measures are evaluated based on the context (filters, slicers, etc.), which allows them to return different results depending on the current view.
+> Optimized for performance: Since they are calculated only when needed, they tend to perform better, especially with large datasets.
+> DAX expressions: Measures are typically written using DAX (Data Analysis Expressions), and they aggregate data, like sums, averages, or custom calculations.
+
+Calculated Columns:
+> Occupy storage space, which can lead to slower loading times.
+> Calculated row by row and stored in the model.
+> Can create and participate in relationships within the data model.
+> Static calculation: Once calculated, the values in a calculated column are stored in the data model and do not change unless the data model is refreshed.
+> Useful for row-level calculations: Ideal for creating new fields based on row-by-row calculations, such as combining two text columns or categorizing values.
+> Less efficient with large datasets: Because calculated columns are stored, they can slow down performance when dealing with massive datasets.
