@@ -1,1 +1,41 @@
 What is the difference between filter and slicer 
+
+Filters
+Filters in Power Bi are used to refine data displayed in reports. They can be appled at different levels:
+1. Visual Level Filters: These filters apply only to a specific visual on the report.
+2. Page Level Filters: These filters apply to all visual on a specific page.
+3. Report Level Filters: These filters apply to all visuals across all pages in the report.
+
+Filters are typically located in the filter pane on the right side of the Power BI interface.
+They can be hidden from end-user or locked to prevent changes. Filters are useful for developers to 
+control the date view before sharing the report with end-users
+
+Slicers
+Silcers are visual elements that allow users to interactively filter data on the report canvas.
+They are designed for easy end-users interaction and can be added directly to the report page. Silcers
+can be in the form of lists, drop-downs, or checkboxes, providing immediate feedback on data changes.
+
+Key Differences
+
+1. Visibility:
+> Filters: Typically operate in the background and can be hidden or locked.
+> Slicers: Visible on the report canvas and designed for user interaction.
+
+2. Interactivity:
+> Filters: Applied through the Filters pane and are less interactive for end-users.
+> Slicers: Allow users to dynamically filter data directly on the report page.
+
+3. Usage:
+> Filters: Ideal for developers to control data views before sharing reports.
+> Slicers: Best for end-users to explore and interact with data in real-time.
+
+4. Customization:
+> Filters: Can be applied at visual, page, or report levels.
+> Slicers: Can be synchronized across multiple pages for consistent filtering.
+
+When to Use Each
+> Use Filters when you need to control the data view without user interaction or when you want to apply filters at different levels (visual, page, report).
+> Use Slicers when you want to provide an interactive and user-friendly way for end-users to filter data directly on the report canvas.
+
+#PowerBI #DataVisualization #DataAnalytics #BusinessIntelligence #DataScience #DataAnalysis #BI #DataTools #TechTips
+#DataDriven #PowerBISlicers #PowerBIFilters #DataInsights #TechEducation
