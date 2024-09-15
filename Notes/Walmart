@@ -1,0 +1,8 @@
+There are two tables, first table contains country, continent and population, 
+the sencond table contains yers with the values of 2020 and 2021, we need 
+to merge or append the second table to first table and each counrty should 
+have separate year values.
+
+To do this we create new columns in both the table and file them with 
+value 1, and then we use left join in the first table, this will ass the 
+year in each values with year 2020 and 2021.
