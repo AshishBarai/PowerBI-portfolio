@@ -1,0 +1,37 @@
+This question is based on a default slicer. Suppose there are cards in a Power BI report, and there is a slicer with multiple countries. Now, the end user wants to see the value of sales from GERMANY when nothing is selected. This needs to be solved with DAX.
+
+To do this, we can use the SELECTEDVALUE function in a card visual. The DAX expression for that is:
+
+Default Germany Revenue = 
+var a = SELECTEDVALUE('d-Territories'[Country],"Germany")
+var b = CALCULATE([Revenue],'d-Territories'[Country] = a)
+RETURN b
+
+DAX Expression:
+Default Germany Revenue = 
+var a = SELECTEDVALUE('d-Territories'[Country],"Germany")
+var b = CALCULATE([Revenue],'d-Territories'[Country] = a)
+RETURN b
+
+Explanation:
+
+1. Variable a:
+var a = SELECTEDVALUE('d-Territories'[Country],"Germany")
+
+> SELECTEDVALUE('d-Territories'[Country],"Germany"): This function returns the value of the Country column from the d-Territories table if there is a single value selected. If no value or multiple values are selected, it defaults to “Germany”.
+Purpose: This ensures that if no specific country is selected in the report, “Germany” will be used as the default country.
+
+2. Variable b:
+var b = CALCULATE([Revenue],'d-Territories'[Country] = a)
+
+CALCULATE([Revenue],'d-Territories'[Country] = a): This function calculates the Revenue measure, but only for the rows where the Country column in the d-Territories table matches the value of a (which is either the selected country or “Germany”).
+Purpose: This filters the Revenue measure to only include data for the specified country.
+
+3. Return Statement:
+RETURN b
+
+> RETURN b: This returns the value of b, which is the calculated revenue for the selected country or “Germany” if no country is selected.
+
+
+Summary:
+This DAX expression calculates the revenue for a selected country from the d-Territories table. If no country is selected, it defaults to calculating the revenue for Germany. This is useful for ensuring that your report always shows relevant data, even when no specific country is selected.
