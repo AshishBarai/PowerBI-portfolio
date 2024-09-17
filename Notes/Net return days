@@ -1,0 +1,21 @@
+How to calculate net return days, meaning in how many days customers are returning the product. There is a table consisting of order dates in the sales table, and there are columns named return date in the returns table. We need to calculate in how many days people are returning the products.
+
+Solution:
+
+Return days = 
+var a = SELECTEDVALUE('f-Returns'[ReturnDate])
+var b = SELECTEDVALUE('f-sales'[OrderDate])
+var c = NETWORKDAYS(a,b)
+RETURN c
+
+1. Variables:
+> a: This variable stores the selected return date from the ‘f-Returns’ table.
+> b: This variable stores the selected order date from the ‘f-sales’ table.
+
+2. NETWORKDAYS Function:
+> c: This variable calculates the number of working days between the return date (a) and the order date (b) using the NETWORKDAYS function. The NETWORKDAYS function excludes weekends and optionally holidays from the calculation.
+
+3. Return Statement:
+The RETURN statement outputs the value of c, which is the number of working days between the order date and the return date.
+
+This DAX formula helps you determine the net return days, which is useful for analyzing customer return behavior and improving our return policies.
