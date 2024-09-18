@@ -1,0 +1,21 @@
+How to calculate rolling 12 months average Sales.
+
+Rolling 12 months average sales = CALCULATE(AVERAGE('f-sales'[Revenue]), DATESINPERIOD( 'd-Calendar'[Date],MAX('d-Calendar'[Date]), -12,MONTH))
+
+Explanation:
+
+1. CALCULATE:
+> This function modifies the context in which data is evaluated. It allows you to apply filters to an expression.
+
+2. AVERAGE(‘f-sales’[Revenue]):
+> This part calculates the average of the ‘Revenue’ column from the ‘f-sales’ table.
+
+3. DATESINPERIOD(‘d-Calendar’[Date], MAX(‘d-Calendar’[Date]), -12, MONTH):
+> DATESINPERIOD: This function returns a table that contains a column of dates shifted by a specified number of intervals.
+> ‘d-Calendar’[Date]: This is the date column from the ‘d-Calendar’ table.
+> MAX(‘d-Calendar’[Date]): This gets the latest date in the ‘d-Calendar’ table.
+> -12: This specifies the number of intervals to shift. Here, it means 12 months back.
+> MONTH: This specifies the interval type, which is months in this case.
+
+Putting It All Together:
+The function calculates the average revenue over the last 12 months from the latest date in the ‘d-Calendar’ table. It does this by creating a context that includes only the dates within the last 12 months and then calculating the average revenue within that context.
