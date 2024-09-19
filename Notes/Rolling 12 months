@@ -1,0 +1,10 @@
+In data analysis, "rolling 12 sales" refers to a method of tracking sales data over a continuous 12-month period. This approach helps to smooth out seasonal variations and provides a clearer picture of long-term trends. Here's how it works:
+
+1. Continuous Update: Each month, the data set is updated to include the most recent month's sales and exclude the sales from the same month in the previous year. This way, you always have the most recent 12 months of data.
+2. Trend Analysis: By looking at a rolling 12-month period, you can identify trends and patterns that might not be visible in shorter time frames.
+3. Performance Measurement: This method is useful for measuring performance over time, as it accounts for seasonal fluctuations and provides a more stable view of sales performance.
+
+For example, 
+if you're analyzing sales data for September 2024, a rolling 12-month period would include data from October 2023 to September 2024. When you move to October 2024, the period would shift to include data from November 2023 to October 2024.
+
+This technique is commonly used in business analytics to make informed decisions based on consistent and up-to-date data.
