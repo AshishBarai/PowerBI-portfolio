@@ -1,2 +1,9 @@
 How to calculate dynamically top "N" values
 
+first we create a table with values of top2, top3, top5 and as required,
+ then write a measure with RANKX that is:
+
+Ranking = RANKX(ALL('d-Products'[ProductName]),[Revenue],,DESC,Dense)
+
+then
+
