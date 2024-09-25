@@ -1,9 +1,24 @@
 How to calculate dynamically top "N" values
 
-first we create a table with values of top2, top3, top5 and as required,
- then write a measure with RANKX that is:
+1. Create a Table:
+> First, create a table with the values for Top 2, Top 3, Top 5, and any other required values.
+
+2. Write a Measure with RANKX:
+> Define a measure to rank products based on revenue:
 
 Ranking = RANKX(ALL('d-Products'[ProductName]),[Revenue],,DESC,Dense)
+The RANKX function ranks products based on their revenue. The ALL function removes any filters on the ‘d-Products’ table, ensuring that the ranking is done over all products. The DESC argument sorts the revenue in descending order, and Dense ensures that ranks are consecutive integers.
 
-then
+3. Create a new measure with switch function:
 
+Define a measure to dynamically calculate the top N revenue based on the selected value from the slicer:
+
+Top N Revenue = 
+var selected_top = SELECTEDVALUE('Top Products'[Value])
+var top_products = SWITCH(selected_top, "TOP 2", IF([Ranking] <= 2, [Revenue]), "TOP 3", IF([Ranking] <= 3, [Revenue]), "TOP 5", IF([Ranking] <= 5, [Revenue]), "TOP 7",IF([Ranking] <= 7, [Revenue]),[Revenue])
+RETURN top_products
+The SELECTEDVALUE function captures the value selected in the slicer from the ‘Top Products’ table.
+The SWITCH function dynamically adjusts the measure based on the selected top N value. It checks the rank of each product and includes its revenue if it falls within the top N ranks.
+
+4. Add the Measure to the Table:
+Add the “Top N Revenue” measure to your table. This will display the top N values according to the slicer selection. Based on the measure, it will show the values for Top 2, Top 3, Top 5, and Top 7.
