@@ -1,0 +1,15 @@
+Difference between Running total and rolling sales
+
+# Running Total
+> Definition: A running total, also known as a cumulative total, is the sum of a sequence of numbers which is updated each time a new number is added to the sequence.
+> Calculation: It starts from the first date and accumulates values over time. For example, if you are calculating the running total of sales, you keep adding each day’s sales to the previous total.
+> Use Case: Useful for understanding the total growth or accumulation over a period. For instance, tracking total sales from the beginning of the year to the current date.
+
+# Rolling Month Sales
+> Definition: Rolling month sales, or a rolling total, is the sum of sales over a specific period, such as the last 30 days, which moves forward with each new day.
+> Calculation: It involves summing up the sales for a defined period (e.g., the last 30 days) and updating this sum as each new day comes in. For example, on January 31st, you sum the sales from January 1st to January 31st. On February 1st, you sum the sales from January 2nd to February 1st, and so on.
+> Use Case: Useful for identifying trends and patterns over a consistent time frame, smoothing out short-term fluctuations. For example, analyzing sales trends over the last 12 months to understand seasonal effects.
+
+# Key Differences
+> Time Frame: Running total accumulates from a fixed start date, while rolling month sales consider a moving window of time.
+> Purpose: Running total shows overall growth or accumulation, whereas rolling month sales help in understanding trends over a consistent period.
