@@ -1,1 +1,9 @@
 how to calculate running total
+
+# Running Total
+> Definition: A running total, also known as a cumulative total, is the sum of a sequence of numbers which is updated each time a new number is added to the sequence.
+> Calculation: It starts from the first date and accumulates values over time. For example, if we are calculating the running total of sales, you keep adding each day’s sales to the previous total.
+> Use Case: Useful for understanding the total growth or accumulation over a period. For instance, tracking total sales from the beginning of the year to the current date.
+
+Dax for running total:
+running total = CALCULATE([Revenue],FILTER(ALL('d-Calendar'),'d-Calendar'[Date] <= MAX('d-Calendar'[Date])))
