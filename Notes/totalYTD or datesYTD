@@ -1,0 +1,19 @@
+About TotalYTD (Year to Date) or DateYTD (Year to Date) in Power BI
+
+TotalYTD:
+Evaluates the year-to-date value of the expression in the current context.
+
+Syntax:
+TOTALYTD(<expression>,<dates>[,<filter>][,<year_end_date>]) 
+
+Return value
+A scalar value that represents the expression evaluated for the current year-to-date dates.
+
+DatesYTD:
+Returns a table that contains a column of the dates for the year to date, in the current context.
+
+Syntax:
+DATESYTD(<dates> [,<year_end_date>]) 
+
+Return value
+A table containing a single column of date values.
