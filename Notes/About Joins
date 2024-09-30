@@ -1,11 +1,24 @@
-Inner Join
+# Inner Join:
+An inner Join returns only the rows where there is a match in both tables based on the specified columns.
 
-Left Outter join:
+When to use: Use an inner Join when you want to retireve only the records that have corresponding entries in both tables.
 
-Right outter join:
+# Left Outer join:
+A left outer join returns all the rows from the left table and the matched rows from the right table.
+If there is not match, the result is NULL on the right side.
 
-Left Anti Join:
+# Right outer join:
+A right outer returns all the rows from the right table and matching rows froms from the left table.
+If there is no match, the result is NULL on the left side.
 
-Right Anti Join:
+# Left Anti Join: A left anit join returnss only the rows from the left table that do not have a matching rows in the right table.
 
-Full Outter Join:
+When to use: Use a left Anti join when we need to identify records in the primary table that lack correcponding entries in thee secondary table.
+
+
+# Right Anti Join: A right anti join returns only the rows from the right table that do not have a matching rows in the left table.
+
+When to Use: Use a Right Anti Join when you need to identify records in the secondary table that lack corresponding entries in the primary table.
+
+# Full Outter Join: A full outer join returns all rows when there is a match in either left or right table.
+This means it includes all records from both tables, with NULL values where there is no match.
