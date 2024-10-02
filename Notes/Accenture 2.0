@@ -1,1 +1,20 @@
-debug the DAX quary
+🔧 Debugging and Optimizing DAX Code 🛠️
+
+1️⃣ Original Code:
+Measure1 = CALCULATE(COUNTROWS(Sales), [Total Sales] > 500)
+Issue: The CALCULATE function allows us to modify the context of a calculation, but in the filter argument, you cannot directly reference a measure like [Total Sales]. To fix this, we need to include the FILTER function, which provides row context to check the condition for each row.
+
+✅ Corrected Code:
+Measure = CALCULATE(COUNTROWS(Sales), FILTER(Sales,[Total Sales] > 500))
+Explanation: The FILTER function works by iterating over each row in the Sales table and applying the condition [Total Sales] > 500 for those rows. This ensures that the CALCULATE function filters only those rows where total sales exceed 500, making the logic valid.
+
+
+2️⃣ Original Code:
+Measure2 = IF(HASONEVALUE(Sales[Country]), VALUES(Sales[Country]))
+Optimization: While this code works, it can be simplified and optimized using SELECTEDVALUE. SELECTEDVALUE automatically returns the single value when only one exists, so there's no need for IF and HASONEVALUE.
+
+✅ Optimized Code:
+Measure2 = SELECTEDVALUE(Sales[Country])
+Explanation: SELECTEDVALUE simplifies the logic by checking if there's only one value in Sales[Country]. It returns that value if found or BLANK() if there are multiple values. This makes the code cleaner and more efficient.
+
+#DAX #PowerBI #DataOptimization #ProblemSolving #DataAnalysis #BusinessIntelligence
