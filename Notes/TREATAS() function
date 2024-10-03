@@ -1,0 +1,28 @@
+ðŸš€ Using the TREATAS() Function to Connect Unrelated Tables in DAX ðŸ’¡
+
+When working with data models in Power BI, there are situations where two tables, such as a calendar_table and a sales_table, may not be connected directly through a relationship. In such cases, how can we establish a connection?
+
+The solution is the TREATAS() function! ðŸ› ï¸
+
+What is the TREATAS() function?
+The TREATAS() function allows us to treat the columns of one table as if they were columns from another, effectively applying filters between unrelated tables.
+
+How does it work?
+It takes the result of a table expression and applies it as a filter to columns from an unrelated table. For each column, TREATAS() filters out any values that are not present in the respective output column.
+
+Syntax: TREATAS(table_expression, <column>[,<column>[,<column>[,...]]])
+
+Example:
+Letâ€™s say you want to calculate total sales based on the number of years present in the calendar_table, but thereâ€™s no direct relationship between the calendar_table and the sales_table. You can use the TREATAS() function like this:
+
+DAX
+Revenue Amount = 
+CALCULATE(SUM('sales_table'[Revenue]), 
+TREATAS(VALUES('calendar_table'[Year]), 'sales_table'[Year]))
+
+In this example:
+
+> The TREATAS() function is filtering the sales_table based on the Year column from the calendar_table.
+> It applies the values of Year from the calendar as a filter on the Year column in the sales data, even though the two tables arenâ€™t related directly.
+
+#PowerBI #DAX #DataModeling #TREATAS #DataAnalysis #BusinessIntelligence #ProblemSolving
